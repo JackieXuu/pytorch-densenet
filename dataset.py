@@ -10,6 +10,8 @@ from tqdm import tqdm
 
 def load_dataset(FLAGS):
 	data = {}
+	if not os.path.exists('data'):
+		os.mkdir('data')
 	if FLAGS.dataset == 'cifar10':
 		mean = [0.5071, 0.4867, 0.4408]
 		stdv = [0.2675, 0.2565, 0.2761]
